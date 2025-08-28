@@ -7,9 +7,9 @@ import java.util.UUID;
 
 public interface UsersService {
 
-    TaskDTO createUser(TaskDTO taskDTO);
-    List<TaskDTO> getAllUsers();
-    TaskDTO getUserById(UUID id);
-    TaskDTO updateUser(UUID id, TaskDTO taskDTO);
+    UsersDTO createUser(UsersDTO usersDTO);
+    List<UsersDTO> getAllUsers();
+    UsersDTO getUserById(UUID id);
+    UsersDTO updateUser(UUID id, UsersDTO usersDTO);
     void deleteUser(UUID id);
 }
