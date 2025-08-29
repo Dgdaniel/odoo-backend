@@ -22,7 +22,7 @@ odoo-backend/
 │── build.gradle<br/>
 │── settings.gradle <br/>
 │── src/ <br/>
-│   ├── main/
+│   ├── main/ <br/>
 │   │   ├── java/com/dgdaniel/odoo/ <br/>
 │   │   │   ├── OdooApplication.java <br/>
 │   │   │   └── app/ <br/>
