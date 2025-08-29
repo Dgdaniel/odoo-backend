@@ -11,7 +11,7 @@ import java.util.UUID;
 import static org.springframework.http.ResponseEntity.*;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UsersController {
 

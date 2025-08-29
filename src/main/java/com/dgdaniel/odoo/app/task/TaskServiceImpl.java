@@ -41,6 +41,7 @@ public class TaskServiceImpl implements TaskService {
                 .map(task -> {
                     task.setTitle(taskDTO.getTitle());
                     task.setDescription(taskDTO.getDescription());
+                    task.setPriority(taskDTO.getPriority());
                     task.setStatus(taskDTO.getStatus());
                     task.setUpdatedAt(LocalDateTime.now());
                     return taskMapper.toDto(taskRepository.save(task));
