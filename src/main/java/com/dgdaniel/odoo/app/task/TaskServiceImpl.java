@@ -1,5 +1,6 @@
 package com.dgdaniel.odoo.app.task;
 
+import com.dgdaniel.odoo.app.user.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.UUID;
 public class TaskServiceImpl implements TaskService {
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
+    private final UsersRepository  usersRepository;
 
     @Override
     public TaskDTO createTask(TaskDTO taskDTO) {
@@ -20,6 +22,11 @@ public class TaskServiceImpl implements TaskService {
         task.setStatus("TODO");
         task.setCreatedAt(LocalDateTime.now());
         task.setUpdatedAt(LocalDateTime.now());
+        if (taskDTO.getUser() != null && taskDTO.getUser().getId() != null) {
+            usersRepository.findById(taskDTO.getUser().getId())
+                    .ifPresent(task::setUser);
+        }
+
         return taskMapper.toDto(taskRepository.save(task));
     }
 
@@ -44,10 +51,16 @@ public class TaskServiceImpl implements TaskService {
                     task.setPriority(taskDTO.getPriority());
                     task.setStatus(taskDTO.getStatus());
                     task.setUpdatedAt(LocalDateTime.now());
+                    if (taskDTO.getUser() != null && taskDTO.getUser().getId() != null) {
+                        usersRepository.findById(taskDTO.getUser().getId())
+                                .ifPresent(task::setUser);
+                    }
+
                     return taskMapper.toDto(taskRepository.save(task));
                 })
                 .orElseThrow(() -> new RuntimeException("Task not found"));
     }
+
 
     @Override
     public void deleteTask(UUID id) {

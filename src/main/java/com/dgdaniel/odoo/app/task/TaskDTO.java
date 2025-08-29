@@ -1,5 +1,6 @@
 package com.dgdaniel.odoo.app.task;
 
+import com.dgdaniel.odoo.app.user.UsersDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,4 +21,5 @@ public class TaskDTO {
     private String priority;
     private LocalDateTime deadline;
     private LocalDateTime createdAt;
+    private UsersDTO user;
 }
