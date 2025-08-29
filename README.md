@@ -19,18 +19,18 @@ Ce projet gère les entités `Users`, `Task` et leur mapping, avec une architect
 
 ## 📂 Structure du projet
 odoo-backend/
-│── build.gradle
-│── settings.gradle
-│── src/
+│── build.gradle<br/>
+│── settings.gradle <br/>
+│── src/ <br/>
 │   ├── main/
-│   │   ├── java/com/dgdaniel/odoo/
-│   │   │   ├── OdooApplication.java
-│   │   │   └── app/
-│   │   │       ├── config/
-│   │   │       ├── task/
-│   │   │       └── user/
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/java/com/dgdaniel/odoo/
-│       └── OdooApplicationTests.java
+│   │   ├── java/com/dgdaniel/odoo/ <br/>
+│   │   │   ├── OdooApplication.java <br/>
+│   │   │   └── app/ <br/>
+│   │   │       ├── config/ <br/>
+│   │   │       ├── task/ <br/>
+│   │   │       └── user/ <br/>
+│   │   └── resources/ <br/>
+│   │       └── application.properties <br/>
+│   └── test/java/com/dgdaniel/odoo/ <br/>
+│       └── OdooApplicationTests.java <br/>
 
